@@ -56,55 +56,69 @@
 				<div id="main" class="wrapper style1">
 					<div class="container">
 						<header class="major">
-							<h2>Left Sidebar</h2>
-							<p>Ipsum dolor feugiat aliquam tempus sed magna lorem consequat accumsan</p>
+							<h2>Cotizador de Distancias</h2>
+							<p>Cotiza el servicio de acuerdo a las distancias por kilometraje</p>
 						</header>
+						
 						<div class="row gtr-150">
 							<div class="col-4 col-12-medium">
 
-								<!-- Sidebar -->
-									<section id="sidebar">
-										<section>
-											<h3>Magna Feugiat</h3>
-											<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit..</p>
-											<footer>
-												<ul class="actions">
-													<li><a href="#" class="button">Learn More</a></li>
-												</ul>
-											</footer>
-										</section>
-										<hr />
-										<section>
-											<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-											<h3>Amet Lorem Tempus</h3>
-											<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
-											<footer>
-												<ul class="actions">
-													<li><a href="#" class="button">Learn More</a></li>
-												</ul>
-											</footer>
-										</section>
+								<section id="sidebar">
+									<section>
+										<h3>Indicaciones para usar el cotizador</h3>
+										<p>Para obtener una cotización precisa, sigue los siguientes pasos:</p>
+										<ol>
+											<li>Elija la ciudad de destino a la que desea que vayan los autos y las camionetas.</li>
+											<li>Seleccione el tipo de servicio que necesita: camionetas 4x4, buses para turismo, furgonetas o autos.</li>
+											<li>Haga clic en el botón "Cotizar" para obtener el precio estimado.</li>
+										</ol>
+										
 									</section>
+									
+								</section>
+								
 
 							</div>
 							<div class="col-8 col-12-medium imp-medium">
 
 								<!-- Content -->
-									<section id="content">
-										<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
-										<h3>Dolore Amet Consequat</h3>
-										<p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at magna consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
-										<p>Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum porta cursus justo. Quisque ultricies lorem in ligula condimentum, et egestas turpis sagittis. Cras ac nunc urna. Nullam eget lobortis purus. Phasellus vitae tortor non est placerat tristique.</p>
-										<h3>Sed Magna Ornare</h3>
-										<p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus.</p>
-										<ul>
-											<li>Faucibus orci lobortis ac adipiscing integer.</li>
-											<li>Col accumsan arcu mi aliquet placerat.</li>
-											<li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
-											<li>Blandit massa non blandit tempor interdum.</li>
-											<li>Lacinia mattis arcu nascetur lobortis.</li>
-										</ul>
-									</section>
+								<section id="content">
+									<a href="#" class="image fit"><img src="images/croquis2.jpg" alt="" /></a>
+									<form>
+										<label for="ciudad-partida">Ciudad de partida:</label>
+										<select id="ciudad-partida" name="ciudad-partida">
+											<option value="quito">Quito</option>
+											<option value="guayaquil">Guayaquil</option>
+										</select>
+								
+										<label for="ciudad-destino">Ciudad de destino:</label>
+										<select id="ciudad-destino" name="ciudad-destino">
+											<option value="quito">Quito</option>
+											<option value="guayaquil">Guayaquil</option>
+											<option value="cuenca">Cuenca</option>
+											<option value="ambato">Ambato</option>
+											<option value="machala">Machala</option>
+											<option value="loja">Loja</option>
+											<option value="manta">Manta</option>
+											<option value="riobamba">Riobamba</option>
+											<option value="esmeraldas">Esmeraldas</option>
+											<option value="santo_domingo">Santo Domingo</option>
+										</select>
+								
+										<label for="servicio">Tipo de servicio:</label>
+										<input type="checkbox" id="camionetas" name="camionetas" value="camionetas">
+										<label for="camionetas">Camionetas 4x4</label><br>
+										<input type="checkbox" id="buses" name="buses" value="buses">
+										<label for="buses">Buses para turismo</label><br>
+										<input type="checkbox" id="furgonetas" name="furgonetas" value="furgonetas">
+										<label for="furgonetas">Furgonetas</label><br>
+										<input type="checkbox" id="autos" name="autos" value="autos">
+										<label for="autos">Autos</label><br>
+								
+										<button type="submit" class="button primary fit">Cotizar</button>
+									</form>
+								</section>
+								
 
 							</div>
 						</div>
@@ -168,6 +182,95 @@
 
     
 </script>
+<script>
+	document.querySelector('form').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  // Obtener los valores seleccionados
+  var ciudadPartida = document.getElementById('ciudad-partida').value;
+  var ciudadDestino = document.getElementById('ciudad-destino').value;
+  var camionetasChecked = document.getElementById('camionetas').checked;
+  var busesChecked = document.getElementById('buses').checked;
+  var furgonetasChecked = document.getElementById('furgonetas').checked;
+  var autosChecked = document.getElementById('autos').checked;
+
+  // Validar si se llenaron todos los campos requeridos
+  if (!ciudadPartida || !ciudadDestino || (!camionetasChecked && !busesChecked && !furgonetasChecked && !autosChecked)) {
+    alert('Por favor, complete todos los campos requeridos.');
+    return; // Detener el proceso si faltan campos
+  }
+
+  // Validar si la ciudad de partida y la ciudad de destino son iguales
+  if (ciudadPartida === ciudadDestino) {
+    alert('La ciudad de partida y la ciudad de destino no pueden ser iguales.');
+    return; // Detener el proceso si son iguales
+  }
+
+  // Obtener la distancia en kilómetros
+  var distancia = obtenerDistancia(ciudadPartida, ciudadDestino);
+
+  // Calcular el costo total
+  var costoTotal = 0;
+  if (camionetasChecked) {
+    costoTotal += distancia * 0.65;
+  }
+  if (busesChecked) {
+    costoTotal += distancia * 0.65;
+  }
+  if (furgonetasChecked) {
+    costoTotal += distancia * 0.65;
+  }
+  if (autosChecked) {
+    costoTotal += distancia * 0.65;
+  }
+
+  // Mostrar el resultado
+  alert('El costo total del servicio de transporte es: $' + costoTotal.toFixed(2) + '\nDistancia a recorrer: ' + distancia + ' km');
+
+  // Restablecer el formulario
+  document.getElementById('ciudad-partida').value = 'quito';
+  document.getElementById('ciudad-destino').value = 'quito';
+  document.getElementById('camionetas').checked = false;
+  document.getElementById('buses').checked = false;
+  document.getElementById('furgonetas').checked = false;
+  document.getElementById('autos').checked = false;
+});
+
+// Función para obtener la distancia en kilómetros entre ciudades
+function obtenerDistancia(ciudadPartida, ciudadDestino) {
+  // Distancias ficticias entre ciudades
+  var distancias = {
+    quito: {
+      guayaquil: 421,
+      cuenca: 441,
+      ambato: 139,
+      machala: 846,
+      loja: 682,
+      manta: 308,
+      riobamba: 179,
+      esmeraldas: 296,
+      santo_domingo: 133
+    },
+    guayaquil: {
+      quito: 421,
+      cuenca: 186,
+      ambato: 283,
+      machala: 139,
+      loja: 414,
+      manta: 369,
+      riobamba: 303,
+      esmeraldas: 305,
+      santo_domingo: 133
+    }
+  };
+
+  return distancias[ciudadPartida][ciudadDestino];
+}
+
+
+
+  </script>
+  
 
 	</body>
 </html>
