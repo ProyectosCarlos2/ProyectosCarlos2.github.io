@@ -68,7 +68,7 @@
 										<h3>Indicaciones para usar el cotizador</h3>
 										<p>Para obtener una cotización precisa, sigue los siguientes pasos:</p>
 										<ol>
-											<li>Elija la ciudad de destino a la que desea que vayan los autos y las camionetas.</li>
+											<li>Escriba la ciudad de destino a la que desea que vayan los autos y las camionetas.</li>
 											<li>Seleccione el tipo de servicio que necesita: camionetas 4x4, buses para turismo, furgonetas o autos.</li>
 											<li>Haga clic en el botón "Cotizar" para obtener el precio estimado.</li>
 										</ol>
@@ -86,24 +86,24 @@
 									<a href="#" class="image fit"><img src="images/croquis2.jpg" alt="" /></a>
 									<form>
 										<label for="ciudad-partida">Ciudad de partida:</label>
-										<select id="ciudad-partida" name="ciudad-partida">
-											<option value="quito">Quito</option>
-											<option value="guayaquil">Guayaquil</option>
-										</select>
-								
+										<input type="text" id="ciudad-partida" name="ciudad-partida">
+
 										<label for="ciudad-destino">Ciudad de destino:</label>
-										<select id="ciudad-destino" name="ciudad-destino">
-											<option value="quito">Quito</option>
-											<option value="guayaquil">Guayaquil</option>
-											<option value="cuenca">Cuenca</option>
-											<option value="ambato">Ambato</option>
-											<option value="machala">Machala</option>
-											<option value="loja">Loja</option>
-											<option value="manta">Manta</option>
-											<option value="riobamba">Riobamba</option>
-											<option value="esmeraldas">Esmeraldas</option>
-											<option value="santo_domingo">Santo Domingo</option>
-										</select>
+										<input type="text" id="ciudad-destino" name="ciudad-destino" list="destinos">
+
+										<datalist id="destinos">
+										<option value="Quito">
+										<option value="Guayaquil">
+										<option value="Cuenca">
+										<option value="Ambato">
+										<option value="Machala">
+										<option value="Loja">
+										<option value="Manta">
+										<option value="Riobamba">
+										<option value="Esmeraldas">
+										<option value="Santo Domingo">
+										</datalist>
+
 								
 										<label for="servicio">Tipo de servicio:</label>
 										<input type="checkbox" id="camionetas" name="camionetas" value="camionetas">
