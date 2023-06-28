@@ -1,14 +1,11 @@
 <!DOCTYPE HTML>
-<!--
-	Landed by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Cotizador</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="keywords" content="cotizador, calculadora, precios, estimación, presupuesto" />
+		<meta name="description" content="Este es un cotizador que te permite calcular y estimar los precios de diferentes productos o servicios. Obtén un presupuesto rápido y preciso con esta herramienta en línea." />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="shortcut icon" href="logo.jpg" type="image/jpg">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -86,7 +83,7 @@
 									<a href="#" class="image fit"><img src="images/croquis2.jpg" alt="" /></a>
 									<form>
 										<label for="ciudad-partida">Ciudad de partida:</label>
-										<input type="text" id="ciudad-partida" name="ciudad-partida">
+										<input type="text" id="ciudad-partida" name="ciudad-partida" list="destinos">
 
 										<label for="ciudad-destino">Ciudad de destino:</label>
 										<input type="text" id="ciudad-destino" name="ciudad-destino" list="destinos">
@@ -115,7 +112,8 @@
 										<input type="checkbox" id="autos" name="autos" value="autos">
 										<label for="autos">Autos</label><br>
 								
-										<button type="submit" class="button primary fit">Cotizar</button>
+										<button type="submit" class="button primary fit" onclick="sendMessage(event)">Cotizar</button>
+
 									</form>
 								</section>
 								
@@ -128,10 +126,20 @@
 			<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">
-					<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+					<li>
+						<a href="https://www.tiktok.com/@trt.road_tripsc.a?_t=8dXGUyeCVtO&_r=1" class="icon brands alt fa-tiktok">
+						  <span class="label">tiktok</span>
+						</a>
+					  </li>
+					  
 					<li><a href="https://www.facebook.com/soldado.rayo.7/" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://instagram.com/tyt.road.trips_c.a?igshid=MzNlNGNkZWQ4Mg==" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
 					<li><a href="mailto:trtroadtrips@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					<li>
+						<a href="https://g.co/kgs/tWUkws" class="icon brands alt fa-google">
+						  <span class="label">Google</span>
+						</a>
+					  </li>
 				</ul>
 				
 				<ul class="copyright">
@@ -139,7 +147,6 @@
 					<li>Design: <a href="http://angulocarlos.com">Carlos Angulo</a></li>
 				</ul>
 			</footer>
-
 
 		</div>
 
@@ -183,19 +190,19 @@
     
 </script>
 <script>
-	document.querySelector('form').addEventListener('submit', function (event) {
+	function sendMessage(event) {
   event.preventDefault();
 
-  // Obtener los valores seleccionados
-  var ciudadPartida = document.getElementById('ciudad-partida').value;
-  var ciudadDestino = document.getElementById('ciudad-destino').value;
-  var camionetasChecked = document.getElementById('camionetas').checked;
-  var busesChecked = document.getElementById('buses').checked;
-  var furgonetasChecked = document.getElementById('furgonetas').checked;
-  var autosChecked = document.getElementById('autos').checked;
+  // Obtener los valores de los campos del formulario
+  const ciudadPartida = document.getElementById('ciudad-partida').value;
+  const ciudadDestino = document.getElementById('ciudad-destino').value;
+  const camionetas = document.getElementById('camionetas').checked;
+  const buses = document.getElementById('buses').checked;
+  const furgonetas = document.getElementById('furgonetas').checked;
+  const autos = document.getElementById('autos').checked;
 
   // Validar si se llenaron todos los campos requeridos
-  if (!ciudadPartida || !ciudadDestino || (!camionetasChecked && !busesChecked && !furgonetasChecked && !autosChecked)) {
+  if (!ciudadPartida || !ciudadDestino || (!camionetas && !buses && !furgonetas && !autos)) {
     alert('Por favor, complete todos los campos requeridos.');
     return; // Detener el proceso si faltan campos
   }
@@ -206,66 +213,36 @@
     return; // Detener el proceso si son iguales
   }
 
-  // Obtener la distancia en kilómetros
-  var distancia = obtenerDistancia(ciudadPartida, ciudadDestino);
-
-  // Calcular el costo total
-  var costoTotal = 0;
-  if (camionetasChecked) {
-    costoTotal += distancia * 0.65;
+  // Construir el mensaje con la información del formulario
+  let mensaje = 'Saludos, estoy interesado en cotizar los siguientes servicios:\n\n';
+  mensaje += 'Ciudad de partida: ' + ciudadPartida + '\n';
+  mensaje += 'Ciudad de destino: ' + ciudadDestino + '\n';
+  mensaje += 'Tipo de servicio:\n';
+  if (camionetas) {
+    mensaje += '- Camionetas 4x4\n';
   }
-  if (busesChecked) {
-    costoTotal += distancia * 0.65;
+  if (buses) {
+    mensaje += '- Buses para turismo\n';
   }
-  if (furgonetasChecked) {
-    costoTotal += distancia * 0.65;
+  if (furgonetas) {
+    mensaje += '- Furgonetas\n';
   }
-  if (autosChecked) {
-    costoTotal += distancia * 0.65;
+  if (autos) {
+    mensaje += '- Autos\n';
   }
+  mensaje += '\nPor favor, ¿me podrían proporcionar el precio total por los servicios seleccionados?';
 
-  // Mostrar el resultado
-  alert('El costo total del servicio de transporte es: $' + costoTotal.toFixed(2) + '\nDistancia a recorrer: ' + distancia + ' km');
+  // Crear los enlaces de WhatsApp con el mensaje
+  const telefono1 = '+593992927986';
+  const telefono2 = '+593983933777';
+  const fullMessage1 = 'https://api.whatsapp.com/send?phone=' + telefono1 + '&text=' + encodeURIComponent(mensaje);
+  const fullMessage2 = 'https://api.whatsapp.com/send?phone=' + telefono2 + '&text=' + encodeURIComponent(mensaje);
 
-  // Restablecer el formulario
-  document.getElementById('ciudad-partida').value = 'quito';
-  document.getElementById('ciudad-destino').value = 'quito';
-  document.getElementById('camionetas').checked = false;
-  document.getElementById('buses').checked = false;
-  document.getElementById('furgonetas').checked = false;
-  document.getElementById('autos').checked = false;
-});
-
-// Función para obtener la distancia en kilómetros entre ciudades
-function obtenerDistancia(ciudadPartida, ciudadDestino) {
-  // Distancias ficticias entre ciudades
-  var distancias = {
-    quito: {
-      guayaquil: 421,
-      cuenca: 441,
-      ambato: 139,
-      machala: 846,
-      loja: 682,
-      manta: 308,
-      riobamba: 179,
-      esmeraldas: 296,
-      santo_domingo: 133
-    },
-    guayaquil: {
-      quito: 421,
-      cuenca: 186,
-      ambato: 283,
-      machala: 139,
-      loja: 414,
-      manta: 369,
-      riobamba: 303,
-      esmeraldas: 305,
-      santo_domingo: 133
-    }
-  };
-
-  return distancias[ciudadPartida][ciudadDestino];
+  // Abrir las ventanas de WhatsApp con los enlaces
+  window.open(fullMessage1, '_blank');
+  window.open(fullMessage2, '_blank');
 }
+
 
 
 
