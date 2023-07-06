@@ -79,8 +79,36 @@
 			  
 				  <div style="position: relative;">
 					<img src="images/datos.jpg" alt="datos">
-					<input type="text" id="NombreEmpresa" name="NombreEmpresa" style="position: absolute; top: 80px; left: 300px; width: 150px; color: black;" >
+					<input type="text" id="NombreEmpresa" name="NombreEmpresa" style="position: absolute; top: 55px; left: 310px; width: 290px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí" >
+					<input type="text" id="NombreConductor" name="NombreConductor" style="position: absolute; top: 60px; left: 855px; width: 240px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
+					<input type="text" id="Placa" name="Placa" style="position: absolute; top: 103px; left: 855px; width: 240px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
+					<input type="text" id="KilometrajeInicial" name="KilometrajeInicial" style="position: absolute; top: 153px; left: 145px; width: 240px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
+					<input type="text" id="KilometrajeFinal" name="KilometrajeFinal" style="position: absolute; top: 153px; left: 445px; width: 240px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
+					<input type="text" id="KilometrajeTotal" name="KilometrajeTotal" style="position: absolute; top: 153px; left: 845px; width: 240px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
 				  </div>
+				  <script>
+
+						const kilometrajeInicialInput = document.getElementById('KilometrajeInicial');
+						const kilometrajeFinalInput = document.getElementById('KilometrajeFinal');
+						const kilometrajeTotalInput = document.getElementById('KilometrajeTotal');
+
+						kilometrajeInicialInput.addEventListener('input', calcularKilometrajeTotal);
+						kilometrajeFinalInput.addEventListener('input', calcularKilometrajeTotal);
+
+						function calcularKilometrajeTotal() {
+						const kilometrajeInicial = kilometrajeInicialInput.value.trim();
+						const kilometrajeFinal = kilometrajeFinalInput.value.trim();
+
+						if (kilometrajeInicial !== '' && kilometrajeFinal !== '') {
+							const kilometrajeTotal = parseFloat(kilometrajeFinal) - parseFloat(kilometrajeInicial);
+							kilometrajeTotalInput.value = isNaN(kilometrajeTotal) ? '' : kilometrajeTotal;
+						} else {
+							kilometrajeTotalInput.value = '';
+						}
+						}
+
+
+				  </script>
 			  
 				  <div style="position: relative;">
 					<img src="images/pasajeros.jpg" alt="pasajeros">
