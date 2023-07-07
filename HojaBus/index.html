@@ -16,6 +16,8 @@
 	
 		<!-- Agregar idioma español -->
 		<meta http-equiv="Content-Language" content="es">
+		
+		
 	</head>
 	
 	
@@ -53,6 +55,7 @@
 				width: 100%;
 			}
 		</style>
+		
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -73,9 +76,10 @@
 			<div id="main" class="wrapper style1" style="background-color: white;">
 				<div class="container">
 				  <div style="position: relative;">
-					<img src="images/encabezad.jpg" alt="encabezado" style="margin-left: -90px;">
+					<img src="images/encabezad.jpg" alt="encabezado" style="margin-left: -70px;">
 
 				  </div>
+				  
 			  
 				  <div style="position: relative;">
 					<img src="images/datos.jpg" alt="datos">
@@ -85,6 +89,22 @@
 					<input type="text" id="KilometrajeInicial" name="KilometrajeInicial" style="position: absolute; top: 153px; left: 145px; width: 240px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
 					<input type="text" id="KilometrajeFinal" name="KilometrajeFinal" style="position: absolute; top: 153px; left: 445px; width: 240px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
 					<input type="text" id="KilometrajeTotal" name="KilometrajeTotal" style="position: absolute; top: 153px; left: 845px; width: 240px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
+					<input type="date" id="Fecha1" name="Fecha1" style="position: absolute; top: 333px; left: 90px; width: 120px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;">
+					<input type="date" id="Fecha2" name="Fecha2" style="position: absolute; top: 370px; left: 90px; width: 120px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;">
+					<input type="text" id="Origen1" name="Origen1" style="position: absolute; top: 325px; left: 265px; width: 240px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
+					<input type="text" id="Origen2" name="Origen2" style="position: absolute; top: 360px; left: 265px; width: 240px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
+					<input type="time" id="HoraSalida1" name="HoraSalida1" style="position: absolute; top: 370px; left: 520px; width: 85px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
+					<input type="time" id="HoraLlegada1" name="HoraLlegada1" style="position: absolute; top: 330px; left: 520px; width: 85px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
+					<input type="time" id="HoraSalida2" name="HoraSalida2" style="position: absolute; top: 370px; left: 700px; width: 85px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
+					<input type="time" id="HoraLlegada2" name="HoraLlegada2" style="position: absolute; top: 330px; left: 700px; width: 85px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
+					<input type="text" id="Observacion1" name="Observacion1" style="position: absolute; top: 325px; left: 820px; width: 240px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
+					<input type="text" id="Observacion2" name="Observacion2" style="position: absolute; top: 360px; left: 820px; width: 240px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
+				
+				
+
+
+ 
+				
 				  </div>
 				  <script>
 
@@ -109,15 +129,21 @@
 
 
 				  </script>
+				  <script>
+					var fechaActual = new Date().toISOString().slice(0, 10); // Obtiene la fecha actual en formato ISO (yyyy-mm-dd)
+				
+					document.getElementById("Fecha1").value = fechaActual;
+					document.getElementById("Fecha2").value = fechaActual;
+				  </script>
 			  
 				  <div style="position: relative;">
 					<img src="images/pasajeros.jpg" alt="pasajeros">
-					<input type="text" id="pasajeros" name="pasajeros" style="position: absolute; top: 150px; left: 300px;">
+					
 				  </div>
 			  
 				  <div style="position: relative;">
-					<img src="images/pie.jpg" alt="final" style="margin-left: -40px;">
-					<input type="text" id="final" name="final" style="position: absolute; top: 200px; left: 400px;">
+					<img src="images/pie.jpg" alt="final" style="margin-left: -20px;">
+					
 				  </div>
 				</div>
 			  </div>
