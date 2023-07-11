@@ -14,7 +14,7 @@
 		<meta http-equiv="Content-Language" content="es">
 	</head>
 	<body class="is-preload">
-		<div class="contador-circular">
+		<div class="contador-circular" id="Circulo">
 			<div id="contador">0</div>
 		</div>
 		<style>
@@ -60,11 +60,22 @@
 			</header>
 			<!--Main-->
 			<div id="main" class="wrapper style1" style="background-color: white;">
+				<style>
+					@media print {
+					  #main {
+						transform: scale(0.7); /* Ajusta el valor para cambiar el tamaño de la sección */
+						transform-origin: top;
+						height: 100%; /* Ajusta el valor para cambiar la altura de la sección */
+						
+						
+					  }
+					}
+					</style>
+					
 				<div class="container">
 				  <div style="position: relative;">
 					<img src="images/encabezad.jpg" alt="encabezado" style="margin-left: -70px;">
-			    </div>
-				  <div style="position: relative;">
+				  	<div style="position: relative;">
 					<img src="images/datos.jpg" alt="datos">
 					<input type="text" id="NombreEmpresa" name="NombreEmpresa" style="position: absolute; top: 55px; left: 310px; width: 290px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí" >
 					<input type="text" id="NombreConductor" name="NombreConductor" style="position: absolute; top: 60px; left: 855px; width: 240px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
@@ -82,6 +93,7 @@
 					<input type="time" id="HoraLlegada2" name="HoraLlegada2" style="position: absolute; top: 330px; left: 700px; width: 85px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
 					<input type="text" id="Observacion1" name="Observacion1" style="position: absolute; top: 325px; left: 820px; width: 240px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
 					<input type="text" id="Observacion2" name="Observacion2" style="position: absolute; top: 360px; left: 820px; width: 240px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí">
+				  </div>
 				</div>
 				  <script>
 						const kilometrajeInicialInput = document.getElementById('KilometrajeInicial');
@@ -121,6 +133,7 @@
 					<input type="text" id="Pasajero" name="Pasajero" style="position: absolute; top: 465px; left: 70px; width: 390px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí" >
 					<input type="text" id="Pasajero" name="Pasajero" style="position: absolute; top: 505px; left: 70px; width: 390px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí" >
 					<input type="text" id="Pasajero" name="Pasajero" style="position: absolute; top: 545px; left: 70px; width: 390px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí" >
+					</div>
 				</div>
 				<div>
 					<input type="text" id="CedulasPasajeros" name="CedulasPasajeros" style="position: absolute; top: 65px; left: 505px; width: 200px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí" >
@@ -149,46 +162,70 @@
 							<input type="text" id="Proyecto" name="Proyecto" style="position: absolute; top: 425px; left: 715px; width: 390px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí" >
 							<input type="text" id="Proyecto" name="Proyecto" style="position: absolute; top: 465px; left: 715px; width: 390px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí" >
 							<input type="text" id="Proyecto" name="Proyecto" style="position: absolute; top: 505px; left: 715px; width: 390px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí" >
-							<input type="text" id="Proyecto" name="Proyecto" style="position: absolute; top: 545px; left: 715px; width: 390px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí" ></div>
-				  </div>
+							<input type="text" id="Proyecto" name="Proyecto" style="position: absolute; top: 545px; left: 715px; width: 390px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí" >
+						</div>
+				  
 				  <div style="position: relative;">
 					<img src="images/pie.jpg" alt="final" style="margin-left: -20px;">
 					<input type="text" id="FirmaConductor" name="FirmaConductor" style="position: absolute; top: 173px; left: 100px; width: 290px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí" >
 					<input type="text" id="FirmaEmpresa" name="FirmaEmpresa" style="position: absolute; top: 173px; left: 845px; width: 290px; color: black; border: inherit; background-color: inherit; font-family: 'Times New Roman', Times, serif; font-size: inherit; outline: none;" placeholder="Escribir aquí" >
 				  </div>
 				</div>
-				<li><a class="button primary" id="descargarBoton" href="#">Descargar</a></li>
-
-				<script>
-				document.getElementById("descargarBoton").addEventListener("click", function() {
-					// URL del documento a descargar (debe estar en la carpeta raíz del proyecto)
-					var documentoURL = "hojaderutabus.pdf";
-
-					// Crear un enlace temporal para descargar el documento
-					var enlaceTemporal = document.createElement("a");
-					enlaceTemporal.href = documentoURL;
-					enlaceTemporal.target = "_blank";
-					enlaceTemporal.download = documentoURL.substr(documentoURL.lastIndexOf("/") + 1);
-					
-					// Agregar el enlace temporal al documento
-					document.body.appendChild(enlaceTemporal);
-					
-					// Simular el clic en el enlace temporal para iniciar la descarga
-					enlaceTemporal.click();
-					
-					// Eliminar el enlace temporal del documento
-					document.body.removeChild(enlaceTemporal);
-				});
-				</script>
-				<br>
-				<li><a class="button primary" id="imprimirBoton" href="#">Imprimir</a></li>
-
-				<script>
-				document.getElementById("imprimirBoton").addEventListener("click", function() {
-					window.print();
-				});
-				</script>
 				
+				<div id="imp">
+					<li style="text-align: center;">
+						<a class="button primary" id="imprimirBoton" href="">Imprimir</a>
+					  </li>
+					  
+					  <script>
+						document.getElementById("imprimirBoton").addEventListener("click", function() {
+						  // Ocultar la sección navbar y el footer
+						  var navbar = document.getElementById("header");
+						  var footer = document.getElementById("footer");
+						  var btn = document.getElementById("Circulo");
+						  var imp = document.getElementById("imp");
+					  
+						  navbar.style.display = "none";
+						  footer.style.display = "none";
+						  btn.style.display = "none";
+						  imp.style.display = "none";
+					  
+						  // Imprimir la página
+						  window.print();
+					  
+						  // Restaurar la visualización de la sección navbar y el footer después de imprimir
+						  navbar.style.display = "";
+						  footer.style.display = "";
+						  btn.style.display = "";
+						  imp.style.display = "";
+						});
+					  </script>
+					  
+				  
+				  <br>
+				  <li style="text-align: center;">
+					<a class="button primary" id="descargarBoton" href="#">Imprimir(Vacío)</a>
+				  </li>
+				  
+				  <script>
+					document.getElementById("descargarBoton").addEventListener("click", function() {
+					  var documentoURL = "hojaderutabus.pdf";
+					  var enlaceTemporal = document.createElement("a");
+					  enlaceTemporal.href = documentoURL;
+					  enlaceTemporal.target = "_blank";
+					  enlaceTemporal.download = documentoURL.substr(documentoURL.lastIndexOf("/") + 1);
+					  document.body.appendChild(enlaceTemporal);
+					  enlaceTemporal.click();
+					  document.body.removeChild(enlaceTemporal);
+					});
+				  </script>
+				  </div>
+			</div>
+		</div>
+		
+			</div>
+			</div>
+			</div>
 
 			  </div>
 			<!-- Footer -->
