@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+
+
+<html>
+	<head>
+		<title>Hojas de Ruta</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<meta name="description" content="Formulario de alquiler de camionetas y buses para planificar rutas y viajes." />
+		<meta name="keywords" content="alquiler, bus,camionetas, transporte, viaje, ruta, formulario" />
+		
+		<link rel="shortcut icon" href="logo.jpg" type="image/jpg">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<<style>
+			body {
+				overflow-x: auto;
+			}
+		</style>
+		<div class="contador-circular" id="Circulo" >
+			<div id="contador">0</div>
+			</div>
+
+		<style>
+			
+			.contador-circular {
+			  position: fixed;
+			  bottom: 20px;
+			  right: 20px;
+			  width: 50px;
+			  height: 50px;
+			  border-radius: 50%;
+			  background-color: black;
+			  color: white;
+			  text-align: center;
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+			  font-size: 20px;
+			  font-weight: bold;
+			  cursor: pointer;
+			  z-index: 9999;
+			  display: none;
+			}
+			.image.fit {
+			display: block;
+			margin: 0 0 2em 0;
+			width: 50%;
+			}
+
+			.image.fit img {
+				width: 100%;
+			}
+		</style>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="https://roadtrt.com/">T&T Road Trips</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="https://roadtrt.com/">Inicio</a></li>
+						<li><a href="https://roadtrt.com/login" class="button primary">Iniciar Secion</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+					<header class="major">
+						<h2>Hojas de Ruta</h2>
+						
+					</header>
+					<div class="row">
+						<!-- Content -->
+						<section id="content" class="col-6 col-12-medium">
+							<h3>Buses</h3>
+							<a href="https://roadtrt.com/HojaBus" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+							<a class="button primary" id="descargarBoton" href="#">Imprimir</a>
+							<a class="button primary" href="https://roadtrt.com/HojaBus">Editar</a>
+						</section>
+						<script>
+							document.getElementById("descargarBoton").addEventListener("click", function() {
+							var documentoURL = "hojaderutabus.pdf";
+							var enlaceTemporal = document.createElement("a");
+							enlaceTemporal.href = documentoURL;
+							enlaceTemporal.target = "_blank";
+							enlaceTemporal.download = documentoURL.substr(documentoURL.lastIndexOf("/") + 1);
+							document.body.appendChild(enlaceTemporal);
+							enlaceTemporal.click();
+							document.body.removeChild(enlaceTemporal);
+							});
+						</script>
+						
+						<section id="content" class="col-6 col-12-medium">
+							<h3>Camionetas</h3>
+							<a href="https://roadtrt.com/HojaCamioneta" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+							<a class="button primary" id="descargarBoton1" href="#">Imprimir</a>
+							<a class="button primary" href="https://roadtrt.com/HojaCamioneta">Editar</a>
+							<script>
+								document.getElementById("descargarBoton1").addEventListener("click", function() {
+								var documentoURL = "hojacamioneta.pdf";
+								var enlaceTemporal = document.createElement("a");
+								enlaceTemporal.href = documentoURL;
+								enlaceTemporal.target = "_blank";
+								enlaceTemporal.download = documentoURL.substr(documentoURL.lastIndexOf("/") + 1);
+								document.body.appendChild(enlaceTemporal);
+								enlaceTemporal.click();
+								document.body.removeChild(enlaceTemporal);
+								});
+							</script>
+						</section>
+
+					</div>
+					</div>
+				</div>
+  
+
+				<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li>
+							<a href="https://www.tiktok.com/@trt.road_tripsc.a?_t=8dXGUyeCVtO&_r=1" class="icon brands alt fa-tiktok">
+							  <span class="label">tiktok</span>
+							</a>
+						  </li>
+						<li><a href="https://www.facebook.com/soldado.rayo.7/" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="https://instagram.com/tyt.road.trips_c.a?igshid=MzNlNGNkZWQ4Mg==" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="mailto:trtroadtrips@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+						<li>
+							<a href="https://g.co/kgs/tWUkws" class="icon brands alt fa-google">
+							  <span class="label">Google</span>
+							</a>
+						  </li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; T&T Road Trips. All rights reserved.</li>
+						<li>Design: <a href="http://angulocarlos.com">Carlos Angulo</a></li>
+					</ul>
+				</footer>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				
+                let url = 'https://general-2e89b-default-rtdb.firebaseio.com/roat.json';
+        let contador = 0;
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            contador = data.contador;
+            contador1 = data.contador1;
+            document.getElementById('contador').innerHTML = contador;
+            
+            aumentar(); // Llama a la función para incrementar el contador en 1
+        })
+        .catch(error => console.error(error));
+        function aumentar() {
+        contador++;
+        document.getElementById('contador').innerHTML = contador;
+        fetch(url, {
+            method: 'PUT',
+            body: JSON.stringify({ contador: contador, contador1: contador1 })
+        })
+            .then(response => console.log(response))
+            .catch(error => console.error(error));
+        }
+</script>
+
+	</body>
+</html>
